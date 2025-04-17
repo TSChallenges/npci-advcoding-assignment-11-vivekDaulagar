@@ -1,0 +1,144 @@
+{
+  "records": [
+    {
+      "id": 1,
+      "crop": "corn",
+      "region": "Midwest",
+      "yield": 180,
+      "year": 2022
+    },
+    {
+      "id": 2,
+      "crop": "wheat",
+      "region": "Great Plains",
+      "yield": 45,
+      "year": 2022
+    },
+    {
+      "id": 3,
+      "crop": "soybeans",
+      "region": "Midwest",
+      "yield": 52,
+      "year": 2022
+    },
+    {
+      "id": 4,
+      "crop": "corn",
+      "region": "Southeast",
+      "yield": 165,
+      "year": 2022
+    },
+    {
+      "id": 5,
+      "crop": "rice",
+      "region": "South",
+      "yield": 7500,
+      "year": 2022
+    },
+    {
+      "id": 6,
+      "crop": "wheat",
+      "region": "Northwest",
+      "yield": 40,
+      "year": 2022
+    },
+    {
+      "id": 7,
+      "crop": "corn",
+      "region": "Southwest",
+      "yield": 155,
+      "year": 2022
+    },
+    {
+      "id": 8,
+      "crop": "cotton",
+      "region": "South",
+      "yield": 900,
+      "year": 2022
+    },
+    {
+      "id": 9,
+      "crop": "soybeans",
+      "region": "Northeast",
+      "yield": 48,
+      "year": 2022
+    },
+    {
+      "id": 10,
+      "crop": "corn",
+      "region": "Midwest",
+      "yield": 185,
+      "year": 2022
+    },
+    {
+      "id": 11,
+      "crop": "wheat",
+      "region": "Midwest",
+      "yield": 42,
+      "year": 2022
+    },
+    {
+      "id": 12,
+      "crop": "corn",
+      "region": "Northeast",
+      "yield": 170,
+      "year": 2022
+    },
+    {
+      "id": 13,
+      "crop": "soybeans",
+      "region": "South",
+      "yield": 49,
+      "year": 2022
+    },
+    {
+      "id": 14,
+      "crop": "rice",
+      "region": "California",
+      "yield": 8200,
+      "year": 2022
+    },
+    {
+      "id": 15,
+      "crop": "corn",
+      "region": "Great Plains",
+      "yield": 160,
+      "year": 2022
+    },
+    {
+      "id": 16,
+      "crop": "wheat",
+      "region": "Great Plains",
+      "yield": 47,
+      "year": 2022
+    },
+    {
+      "id": 17,
+      "crop": "cotton",
+      "region": "Southeast",
+      "yield": 850,
+      "year": 2022
+    },
+    {
+      "id": 18,
+      "crop": "corn",
+      "region": "Midwest",
+      "yield": 178,
+      "year": 2022
+    },
+    {
+      "id": 19,
+      "crop": "soybeans",
+      "region": "Midwest",
+      "yield": 53,
+      "year": 2022
+    },
+    {
+      "id": 20,
+      "crop": "corn",
+      "region": "Midwest",
+      "yield": 182,
+      "year": 2022
+    }
+  ]
+}
