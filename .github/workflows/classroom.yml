@@ -1,0 +1,102 @@
+name: Autograding Tests
+'on':
+- workflow_dispatch
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: testGetCropCount
+      id: testgetcropcount
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetCropCount
+        setup-command: ''
+        command: mvn -Dtest=AgDataApplicationTests#testGetCropCount test
+        timeout: 10
+        max-score: 1
+    - name: testGetAverageYield
+      id: testgetaverageyield
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetAverageYield
+        setup-command: ''
+        command: mvn -Dtest=AgDataApplicationTests#testGetAverageYield test
+        timeout: 10
+        max-score: 1
+    - name: testGetRecordsByRegion
+      id: testgetrecordsbyregion
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetRecordsByRegion
+        setup-command: ''
+        command: mvn -Dtest=AgDataApplicationTests#testGetRecordsByRegion test
+        timeout: 10
+        max-score: 1
+    - name: testCaseInsensitivity
+      id: testcaseinsensitivity
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testCaseInsensitivity
+        setup-command: ''
+        command: mvn -Dtest=AgDataApplicationTests#testCaseInsensitivity test
+        timeout: 10
+        max-score: 1
+    - name: testGetCropCount Endpoint
+      id: testgetcropcount-endpoint
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetCropCount Endpoint
+        setup-command: ''
+        command: mvn -Dtest=AgDataApplicationTests#testGetCropCountEndpoint test
+        timeout: 10
+        max-score: 2
+    - name: testGetAverageYield Endpoint
+      id: testgetaverageyield-endpoint
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetAverageYield Endpoint
+        setup-command: ''
+        command: mvn -Dtest=AgDataApplicationTests#testGetAverageYieldEndpoint test
+        timeout: 10
+        max-score: 2
+    - name: testGetRecordsByRegion Endpoint
+      id: testgetrecordsbyregion-endpoint
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetRecordsByRegion Endpoint
+        setup-command: ''
+        command: mvn -Dtest=AgDataApplicationTests#testGetRecordsByRegionEndpoint
+          test
+        timeout: 10
+        max-score: 1
+    - name: testGetRecordsByRegion NoContent
+      id: testgetrecordsbyregion-nocontent
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: testGetRecordsByRegion NoContent
+        setup-command: ''
+        command: mvn -Dtest=AgDataApplicationTests#testGetRecordsByRegion_NoContent
+          test
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TESTGETCROPCOUNT_RESULTS: "${{steps.testgetcropcount.outputs.result}}"
+        TESTGETAVERAGEYIELD_RESULTS: "${{steps.testgetaverageyield.outputs.result}}"
+        TESTGETRECORDSBYREGION_RESULTS: "${{steps.testgetrecordsbyregion.outputs.result}}"
+        TESTCASEINSENSITIVITY_RESULTS: "${{steps.testcaseinsensitivity.outputs.result}}"
+        TESTGETCROPCOUNT-ENDPOINT_RESULTS: "${{steps.testgetcropcount-endpoint.outputs.result}}"
+        TESTGETAVERAGEYIELD-ENDPOINT_RESULTS: "${{steps.testgetaverageyield-endpoint.outputs.result}}"
+        TESTGETRECORDSBYREGION-ENDPOINT_RESULTS: "${{steps.testgetrecordsbyregion-endpoint.outputs.result}}"
+        TESTGETRECORDSBYREGION-NOCONTENT_RESULTS: "${{steps.testgetrecordsbyregion-nocontent.outputs.result}}"
+      with:
+        runners: testgetcropcount,testgetaverageyield,testgetrecordsbyregion,testcaseinsensitivity,testgetcropcount-endpoint,testgetaverageyield-endpoint,testgetrecordsbyregion-endpoint,testgetrecordsbyregion-nocontent
