@@ -1,22 +1,51 @@
 # AgData API Challenge
+## Advanced Coding Assignment-11
 
-## Getting Started
+### Problem Statement
+In this assignment, you'll implement a Spring Boot REST API that processes and analyzes agricultural data. The application will parse a provided JSON dataset of crop records and expose endpoints to query this data.
 
-1. **Accept the GitHub Classroom assignment**  
-   By accepting this assignment, you'll create your own copy of this repository.
+### Steps to Follow
+1. This GitHub repository will be accessible to you once you accept the Assignment.
+2. You have to work directly in this GitHub repository. It is like your own copy of the original repository.
 
-2. **Clone your repository**  
-   Once you've accepted the assignment, clone your new repository to your local machine using:
+3. The folder structure is as given below: (showing major files only)
+   ```
+   root
+   ├── pom.xml
+   └── src
+       └── main
+       |  ├── java/com/agrichallenge/agdata
+       |  |   ├── model
+       |  |   |   └── AgData.java
+       |  |   ├── controller
+       |  |   |   └── AgDataController.java
+       |  |   ├── service
+       |  |   |   └── AgDataService.java
+       |  |   └── AgDataApplication.java
+       |  └── resources
+       |      ├── data
+       |      |   └── agdata.json
+       |      ├── static
+       |      |   └── index.html
+       |      └── application.properties
+       └── test
+          └── java/com/agrichallenge/agdata
+              └── AgDataApplicationTests.java
+   ```
+
+4. Review the code/comments present in above files to understand the structure.
+5. Implement the missing classes/methods marked with **TODO** comments.
+6. To work on the files, you can clone this GitHub repository onto your system and then open it with an IDE like IntelliJ, or Eclipse.
    ```
    git clone [your-repository-url]
    ```
+8. Once done, push your changes to this remote GitHub repository.
 
-3. **Open the project in your IDE**  
-   Import the project as a Maven project in your preferred IDE (IntelliJ IDEA, Eclipse, VS Code, etc.)
+### Files to Work On
+- `src/main/java/com/agrichallenge/agdata/model/AgData.java`
+- `src/main/java/com/agrichallenge/agdata/service/AgDataService.java`
+- `src/main/java/com/agrichallenge/agdata/rest/AgDataController.java`
 
-## Challenge Overview
-
-In this assignment, you'll implement a Spring Boot REST API that processes and analyzes agricultural data. The application will parse a provided JSON dataset of crop records and expose endpoints to query this data.
 
 ## Your Tasks
 
@@ -40,11 +69,11 @@ Implement appropriate exception handling for your API.
 
 ## Testing Your Implementation
 
-The project includes test cases in `AgDataServiceTest.java` that you can use to validate your implementation. Make sure all tests pass before submitting.
+The project includes test cases in `AgDataApplicationTests.java` that you can use to validate your implementation. Make sure all tests pass before submitting.
 
 Run the tests with:
 ```
-mvn test
+mvn clean test
 ```
 
 ## Data Format
@@ -81,11 +110,18 @@ When you've completed the implementation:
    ```
    git add .
    git commit -m "Completed AgData API implementation"
-   git push origin main
+   git push
    ```
 
 2. Verify that your changes have been pushed to GitHub
 
 Your submission will be automatically recorded when you push to your repository before the deadline.
 
-Good luck!
+## Grading Criteria:
+- To implement `/api/agdata/crop-count` endpoint correctly [2 Marks]
+- To implement `/api/agdata/average-yield` endpoint correctly [2 Marks]
+- To implement `/api/agdata/by-region` endpoint correctly [2 Marks]
+- To implement case insensitivity for query parameters [2 Marks]
+- To implement appropriate exception handling for your API [2 Marks]
+
+Good luck, and happy coding!
