@@ -44,7 +44,6 @@ public class AgDataService {
 
     public List<AgData> getRecordsByRegion(String region) {
         // TODO: Implement this method to Get all records from a specific region
-        // Note: You'll need to define your model classes
 
         return null;
     }
